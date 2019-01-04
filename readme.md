@@ -1,4 +1,4 @@
-#WordPress 5 Theme
+# WordPress 5 Theme
 This is a theme built from the official Gutenberg theme provided by the WordPress team. You can see that repository here: 
 
 [https://github.com/WordPress/gutenberg-starter-theme]([https://github.com/WordPress/gutenberg-starter-theme])
