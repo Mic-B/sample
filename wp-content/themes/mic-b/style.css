@@ -1,0 +1,1890 @@
+/*
+Theme Name: Mic-B
+Theme URI: https://mic-b.com
+Author: mic-b
+Author URI: https://mic-b.com
+Description: Mic-B.Com - Gutenberg Compatible Theme
+Version: 1.1.0
+Tags: translation-ready
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+  ## Links
+  ## Menus
+# Accessibility
+# Alignments
+# Widgets
+# Content
+  ## Posts and pages
+  ## Comments
+# Infinite scroll
+# Media
+  ## Captions
+  ## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+/* line 25, library/scss/partials/_normalize.scss */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 31, library/scss/partials/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* line 35, library/scss/partials/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 50, library/scss/partials/_normalize.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* line 58, library/scss/partials/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 63, library/scss/partials/_normalize.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* line 68, library/scss/partials/_normalize.scss */
+a {
+  background-color: transparent;
+}
+
+/* line 72, library/scss/partials/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* line 77, library/scss/partials/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 81, library/scss/partials/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 86, library/scss/partials/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 90, library/scss/partials/_normalize.scss */
+h1 {
+  font-size: 2.44em;
+  margin: 0.67em 0;
+  line-height: 1.4;
+}
+
+/* line 96, library/scss/partials/_normalize.scss */
+h2 {
+  font-size: 1.95em;
+  line-height: 1.4;
+}
+
+/* line 101, library/scss/partials/_normalize.scss */
+h3 {
+  font-size: 1.56em;
+  line-height: 1.4;
+}
+
+/* line 106, library/scss/partials/_normalize.scss */
+h4 {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+/* line 111, library/scss/partials/_normalize.scss */
+h5 {
+  font-size: 1em;
+}
+
+/* line 115, library/scss/partials/_normalize.scss */
+h6 {
+  font-size: 0.8em;
+}
+
+/* line 119, library/scss/partials/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 124, library/scss/partials/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 128, library/scss/partials/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 136, library/scss/partials/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 140, library/scss/partials/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 144, library/scss/partials/_normalize.scss */
+img {
+  border: 0;
+}
+
+/* line 148, library/scss/partials/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 152, library/scss/partials/_normalize.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/* line 156, library/scss/partials/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/* line 161, library/scss/partials/_normalize.scss */
+pre {
+  overflow: auto;
+}
+
+/* line 165, library/scss/partials/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* line 173, library/scss/partials/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+/* line 183, library/scss/partials/_normalize.scss */
+button {
+  overflow: visible;
+}
+
+/* line 187, library/scss/partials/_normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/* line 192, library/scss/partials/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 200, library/scss/partials/_normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/* line 205, library/scss/partials/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 211, library/scss/partials/_normalize.scss */
+input {
+  line-height: normal;
+}
+
+/* line 215, library/scss/partials/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 221, library/scss/partials/_normalize.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* line 226, library/scss/partials/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 231, library/scss/partials/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* line 237, library/scss/partials/_normalize.scss */
+legend {
+  border: 0;
+  padding: 0;
+}
+
+/* line 242, library/scss/partials/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/* line 246, library/scss/partials/_normalize.scss */
+optgroup {
+  font-weight: bold;
+}
+
+/* line 250, library/scss/partials/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 255, library/scss/partials/_normalize.scss */
+td,
+th {
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+/* line 263, library/scss/partials/_normalize.scss */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: #444;
+  font-family: "Noto Serif", serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* line 276, library/scss/partials/_normalize.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #32373c;
+  clear: both;
+}
+
+/* line 281, library/scss/partials/_normalize.scss */
+.entry-header h1.entry-title {
+  font-size: 2.44em;
+  line-height: 1.4;
+  margin: 1em 0;
+}
+
+/* line 287, library/scss/partials/_normalize.scss */
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+/* line 291, library/scss/partials/_normalize.scss */
+blockquote {
+  margin: 0 1.5em;
+}
+
+/* line 295, library/scss/partials/_normalize.scss */
+address {
+  margin: 0 0 1.5em;
+}
+
+/* line 299, library/scss/partials/_normalize.scss */
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+/* line 311, library/scss/partials/_normalize.scss */
+code, kbd, tt, var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+}
+
+/* line 317, library/scss/partials/_normalize.scss */
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+/* line 322, library/scss/partials/_normalize.scss */
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+/* line 327, library/scss/partials/_normalize.scss */
+big {
+  font-size: 125%;
+}
+
+/* line 331, library/scss/partials/_normalize.scss */
+.archive .site-header {
+  margin-bottom: 3.5em;
+}
+
+/* line 335, library/scss/partials/_normalize.scss */
+.site-title {
+  margin: .4375em 0 0;
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #333332;
+}
+
+/* line 343, library/scss/partials/_normalize.scss */
+.site-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 348, library/scss/partials/_normalize.scss */
+.site-branding {
+  margin-bottom: 1.75em;
+}
+
+/* line 352, library/scss/partials/_normalize.scss */
+.site-description {
+  margin: .4375em 0 0;
+  font-size: 17px;
+  font-weight: inherit;
+  line-height: 1.4;
+  word-wrap: break-word;
+  color: #929292;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+/* line 363, library/scss/partials/_normalize.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 367, library/scss/partials/_normalize.scss */
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+/* line 374, library/scss/partials/_normalize.scss */
+body {
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */
+}
+
+/* line 378, library/scss/partials/_normalize.scss */
+blockquote, q {
+  quotes: "" "";
+}
+
+/* line 380, library/scss/partials/_normalize.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
+
+/* line 383, library/scss/partials/_normalize.scss */
+hr {
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+/* line 389, library/scss/partials/_normalize.scss */
+ul, ol {
+  margin: 0 0 1.5em 3em;
+}
+
+/* line 393, library/scss/partials/_normalize.scss */
+ul {
+  list-style: disc;
+}
+
+/* line 397, library/scss/partials/_normalize.scss */
+ol {
+  list-style: decimal;
+}
+
+/* line 401, library/scss/partials/_normalize.scss */
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+
+/* line 407, library/scss/partials/_normalize.scss */
+dt {
+  font-weight: bold;
+}
+
+/* line 411, library/scss/partials/_normalize.scss */
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+/* line 415, library/scss/partials/_normalize.scss */
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+/* line 422, library/scss/partials/_normalize.scss */
+figure {
+  margin: 1em 0;
+  /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+/* line 427, library/scss/partials/_normalize.scss */
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+/* line 435, library/scss/partials/_normalize.scss */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: 1px solid;
+  border-color: #ccc #ccc #bbb;
+  border-radius: 3px;
+  background: #e6e6e6;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: .6em 1em .4em;
+}
+
+/* line 450, library/scss/partials/_normalize.scss */
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  border-color: #ccc #bbb #aaa;
+}
+
+/* line 457, library/scss/partials/_normalize.scss */
+button:active, button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+  border-color: #aaa #bbb #bbb;
+}
+
+/* line 467, library/scss/partials/_normalize.scss */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+/* line 489, library/scss/partials/_normalize.scss */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+  color: #111;
+}
+
+/* line 508, library/scss/partials/_normalize.scss */
+select {
+  border: 1px solid #ccc;
+}
+
+/* line 512, library/scss/partials/_normalize.scss */
+textarea {
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+/* line 522, library/scss/partials/_normalize.scss */
+a {
+  color: #0073aa;
+}
+
+/* line 526, library/scss/partials/_normalize.scss */
+a:visited {
+  color: #333;
+}
+
+/* line 530, library/scss/partials/_normalize.scss */
+a:hover, a:focus, a:active {
+  color: #00a0d2;
+}
+
+/* line 534, library/scss/partials/_normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/* line 538, library/scss/partials/_normalize.scss */
+a:hover, a:active {
+  outline: 0;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+/* line 545, library/scss/partials/_normalize.scss */
+.main-navigation {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+  max-width: 636px;
+  text-align: center;
+}
+
+/* line 553, library/scss/partials/_normalize.scss */
+.main-navigation ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+/* line 560, library/scss/partials/_normalize.scss */
+.main-navigation ul ul {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
+  text-align: left;
+}
+
+/* line 570, library/scss/partials/_normalize.scss */
+.main-navigation ul ul ul {
+  left: -999em;
+  top: 0;
+}
+
+/* line 575, library/scss/partials/_normalize.scss */
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+  left: 100%;
+}
+
+/* line 580, library/scss/partials/_normalize.scss */
+.main-navigation ul ul a {
+  width: 200px;
+}
+
+/* line 584, library/scss/partials/_normalize.scss */
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  display: block;
+  left: auto;
+}
+
+/* line 590, library/scss/partials/_normalize.scss */
+.main-navigation li {
+  position: relative;
+}
+
+/* line 594, library/scss/partials/_normalize.scss */
+.main-navigation a {
+  display: block;
+  text-decoration: none;
+}
+
+/* line 599, library/scss/partials/_normalize.scss */
+.menu-toggle {
+  padding: 1em;
+}
+
+@media screen and (max-width: 37.5em) {
+  /* Small menu. */
+  /* line 605, library/scss/partials/_normalize.scss */
+  .menu-toggle,
+  .main-navigation.toggled ul {
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 37.5em) {
+  /* line 613, library/scss/partials/_normalize.scss */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* line 616, library/scss/partials/_normalize.scss */
+  .main-navigation ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* line 622, library/scss/partials/_normalize.scss */
+  .main-navigation a {
+    padding: 0 .5em;
+  }
+}
+/* line 627, library/scss/partials/_normalize.scss */
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+  border-bottom: 1px solid #111;
+  margin: 0 auto 60px;
+  max-width: 636px;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+
+/* line 637, library/scss/partials/_normalize.scss */
+.nav-links {
+  display: flex;
+}
+
+/* line 641, library/scss/partials/_normalize.scss */
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  width: 50%;
+  flex: 1 0 50%;
+}
+
+/* line 648, library/scss/partials/_normalize.scss */
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  text-align: end;
+  flex: 1 0 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+/* line 659, library/scss/partials/_normalize.scss */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+/* line 669, library/scss/partials/_normalize.scss */
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+/* line 691, library/scss/partials/_normalize.scss */
+#primary[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+/* line 699, library/scss/partials/_normalize.scss */
+.alignleft,
+.alignright {
+  max-width: 636px !important;
+  /* Let's work to make this !important unnecessary */
+}
+
+/* line 704, library/scss/partials/_normalize.scss */
+.alignleft img,
+.alignright img,
+.alignleft figcaption,
+.alignright figcaption {
+  max-width: 50%;
+  width: 50%;
+}
+
+/* line 712, library/scss/partials/_normalize.scss */
+.alignleft figcaption {
+  clear: left;
+}
+
+/* line 716, library/scss/partials/_normalize.scss */
+.alignright figcaption {
+  clear: right;
+}
+
+/* line 720, library/scss/partials/_normalize.scss */
+.alignleft img,
+.alignleft figcaption {
+  float: left;
+  margin-right: 1.5em;
+}
+
+/* line 726, library/scss/partials/_normalize.scss */
+.alignright img,
+.alignright figcaption {
+  float: right;
+  margin-left: 1.5em;
+}
+
+/* line 732, library/scss/partials/_normalize.scss */
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+/* line 743, library/scss/partials/_normalize.scss */
+.widget-area {
+  width: 25%;
+}
+
+/* line 747, library/scss/partials/_normalize.scss */
+.widget {
+  margin: 0 0 1.5em;
+  /* Make sure select elements fit in widgets. */
+}
+
+/* line 752, library/scss/partials/_normalize.scss */
+.widget select {
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/* line 759, library/scss/partials/_normalize.scss */
+#page {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* line 764, library/scss/partials/_normalize.scss */
+.site-branding {
+  text-align: center;
+  margin: 60px 0;
+}
+
+/* line 769, library/scss/partials/_normalize.scss */
+.site-footer {
+  margin: 1em 0;
+  opacity: 0.5;
+}
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+/* line 777, library/scss/partials/_normalize.scss */
+.sticky {
+  display: block;
+}
+
+/* line 781, library/scss/partials/_normalize.scss */
+.hentry {
+  margin: 60px 0;
+}
+
+/* line 785, library/scss/partials/_normalize.scss */
+.updated:not(.published) {
+  display: none;
+}
+
+/* line 789, library/scss/partials/_normalize.scss */
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+/* line 795, library/scss/partials/_normalize.scss */
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+/* line 800, library/scss/partials/_normalize.scss */
+.entry-header,
+.page-header,
+.entry-footer,
+.site-info,
+.post-navigation,
+.page-navigation,
+.comments-area,
+.not-found .page-content,
+.search .entry-summary {
+  margin: 1.5em auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  max-width: 636px;
+}
+
+/* line 815, library/scss/partials/_normalize.scss */
+.entry-header .wp-post-image {
+  margin-bottom: 1.5em;
+}
+
+/* line 819, library/scss/partials/_normalize.scss */
+.entry-footer span {
+  margin-right: 1em;
+}
+
+/* line 823, library/scss/partials/_normalize.scss */
+.entry-footer {
+  color: #aaa;
+  font-size: 90%;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #111;
+}
+
+@media screen and (min-width: 664px) {
+  /* line 831, library/scss/partials/_normalize.scss */
+  .entry-header,
+  .page-header,
+  .entry-footer,
+  .site-info,
+  .post-navigation,
+  .page-navigation,
+  .comments-area,
+  .not-found .page-content,
+  .search .entry-summary {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+/* line 848, library/scss/partials/_normalize.scss */
+.comment-content a {
+  word-wrap: break-word;
+}
+
+/* line 852, library/scss/partials/_normalize.scss */
+.bypostauthor {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+/* line 860, library/scss/partials/_normalize.scss */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+/* line 867, library/scss/partials/_normalize.scss */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+/* line 874, library/scss/partials/_normalize.scss */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+/* line 884, library/scss/partials/_normalize.scss */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+/* line 891, library/scss/partials/_normalize.scss */
+.custom-logo-link {
+  display: inline-block;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+/* line 898, library/scss/partials/_normalize.scss */
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+/* line 903, library/scss/partials/_normalize.scss */
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 909, library/scss/partials/_normalize.scss */
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
+}
+
+/* line 913, library/scss/partials/_normalize.scss */
+.wp-caption-text {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+/* line 920, library/scss/partials/_normalize.scss */
+.gallery {
+  margin-bottom: 1.5em;
+}
+
+/* line 924, library/scss/partials/_normalize.scss */
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+
+/* line 931, library/scss/partials/_normalize.scss */
+.gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+
+/* line 935, library/scss/partials/_normalize.scss */
+.gallery-columns-3 .gallery-item {
+  max-width: 33.3333333333%;
+}
+
+/* line 939, library/scss/partials/_normalize.scss */
+.gallery-columns-4 .gallery-item {
+  max-width: 25%;
+}
+
+/* line 943, library/scss/partials/_normalize.scss */
+.gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+
+/* line 947, library/scss/partials/_normalize.scss */
+.gallery-columns-6 .gallery-item {
+  max-width: 16.6666666667%;
+}
+
+/* line 951, library/scss/partials/_normalize.scss */
+.gallery-columns-7 .gallery-item {
+  max-width: 14.2857142857%;
+}
+
+/* line 955, library/scss/partials/_normalize.scss */
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+
+/* line 959, library/scss/partials/_normalize.scss */
+.gallery-columns-9 .gallery-item {
+  max-width: 11.1111111111%;
+}
+
+/* line 963, library/scss/partials/_normalize.scss */
+.gallery-caption {
+  display: block;
+}
+
+/* line 1, library/scss/partials/_blocks.scss */
+.entry-content > * {
+  margin: 36px auto;
+  max-width: 636px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* line 8, library/scss/partials/_blocks.scss */
+.entry-content > .alignwide {
+  max-width: 1100px;
+}
+
+/* line 12, library/scss/partials/_blocks.scss */
+.entry-content > .alignfull {
+  margin: 1.5em 0;
+  max-width: 100%;
+}
+
+/* line 17, library/scss/partials/_blocks.scss */
+.entry-content ul,
+.entry-content ol {
+  margin: 1.5em auto;
+  max-width: 636px;
+  list-style-position: outside;
+}
+
+/* line 24, library/scss/partials/_blocks.scss */
+.wp-block-video video {
+  max-width: 636px;
+}
+
+/* line 28, library/scss/partials/_blocks.scss */
+.wp-block-image img {
+  display: block;
+}
+
+/* line 32, library/scss/partials/_blocks.scss */
+.wp-block-image.alignleft,
+.wp-block-image.alignright {
+  width: 100%;
+}
+
+/* line 37, library/scss/partials/_blocks.scss */
+.wp-block-image.alignfull img {
+  width: 100vw;
+}
+
+/* line 41, library/scss/partials/_blocks.scss */
+.wp-block-gallery:not(.components-placeholder) {
+  margin: 1.5em auto;
+}
+
+/* line 45, library/scss/partials/_blocks.scss */
+.wp-block-cover-text p {
+  padding: 1.5em 14px;
+}
+
+/* line 49, library/scss/partials/_blocks.scss */
+ul.wp-block-latest-posts.alignwide,
+ul.wp-block-latest-posts.alignfull,
+ul.wp-block-latest-posts.is-grid.alignwide,
+ul.wp-block-latest-posts.is-grid.alignwide {
+  padding: 0 14px;
+}
+
+/* line 56, library/scss/partials/_blocks.scss */
+.wp-block-table {
+  display: block;
+  overflow-x: auto;
+}
+
+/* line 61, library/scss/partials/_blocks.scss */
+.wp-block-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* line 66, library/scss/partials/_blocks.scss */
+.wp-block-table td, .wp-block-table th {
+  padding: .5em;
+}
+
+/* line 70, library/scss/partials/_blocks.scss */
+.entry-content li {
+  margin-left: 2.5em;
+  margin-bottom: 6px;
+}
+
+/* line 75, library/scss/partials/_blocks.scss */
+.entry-content ul ul,
+.entry-content ol ol,
+.entry-content ul ol,
+.entry-content ol ul {
+  margin: 0 auto;
+}
+
+/* line 82, library/scss/partials/_blocks.scss */
+.entry-content ul ul li,
+.entry-content ol ol li,
+.entry-content ul ol li,
+.entry-content ol ul li {
+  margin-left: 0;
+}
+
+/* line 90, library/scss/partials/_blocks.scss */
+.wp-block-embed.type-video > .wp-block-embed__wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+/* line 97, library/scss/partials/_blocks.scss */
+.wp-block-embed.type-video > .wp-block-embed__wrapper > iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 107, library/scss/partials/_blocks.scss */
+.wp-block-quote.is-large {
+  margin: 0 auto 16px;
+}
+
+/* line 111, library/scss/partials/_blocks.scss */
+.wp-block-pullquote > p:first-child {
+  margin-top: 0;
+}
+
+/* line 115, library/scss/partials/_blocks.scss */
+.wp-block-separator {
+  margin: 3em auto;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 121, library/scss/partials/_blocks.scss */
+  .wp-block-cover-text p {
+    padding: 1.5em 0;
+  }
+
+  /* line 125, library/scss/partials/_blocks.scss */
+  .entry-content > * {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+/*--------------------------------------------------------------
+# Block Color Palette Colors
+--------------------------------------------------------------*/
+/* line 135, library/scss/partials/_blocks.scss */
+.has-strong-blue-color {
+  color: #0073aa;
+}
+
+/* line 139, library/scss/partials/_blocks.scss */
+.has-strong-blue-background-color {
+  background-color: #0073aa;
+}
+
+/* line 143, library/scss/partials/_blocks.scss */
+.has-lighter-blue-color {
+  color: #229fd8;
+}
+
+/* line 147, library/scss/partials/_blocks.scss */
+.has-lighter-blue-background-color {
+  background-color: #229fd8;
+}
+
+/* line 151, library/scss/partials/_blocks.scss */
+.has-very-light-gray-color {
+  color: #eee;
+}
+
+/* line 155, library/scss/partials/_blocks.scss */
+.has-very-light-gray-background-color {
+  background-color: #eee;
+}
+
+/* line 159, library/scss/partials/_blocks.scss */
+.has-very-dark-gray-color {
+  color: #444;
+}
+
+/* line 163, library/scss/partials/_blocks.scss */
+.has-very-dark-gray-background-color {
+  background-color: #444;
+}
+
+/* Slider */
+/* line 2, library/scss/partials/_slick.scss */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 21, library/scss/partials/_slick.scss */
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 31, library/scss/partials/_slick.scss */
+.slick-list:focus {
+  outline: none;
+}
+
+/* line 35, library/scss/partials/_slick.scss */
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* line 41, library/scss/partials/_slick.scss */
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 51, library/scss/partials/_slick.scss */
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 61, library/scss/partials/_slick.scss */
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: '';
+}
+
+/* line 68, library/scss/partials/_slick.scss */
+.slick-track:after {
+  clear: both;
+}
+
+/* line 72, library/scss/partials/_slick.scss */
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+/* line 77, library/scss/partials/_slick.scss */
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+/* line 85, library/scss/partials/_slick.scss */
+[dir='rtl'] .slick-slide {
+  float: right;
+}
+
+/* line 89, library/scss/partials/_slick.scss */
+.slick-slide img {
+  display: block;
+}
+
+/* line 93, library/scss/partials/_slick.scss */
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+/* line 97, library/scss/partials/_slick.scss */
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+/* line 101, library/scss/partials/_slick.scss */
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+/* line 105, library/scss/partials/_slick.scss */
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+/* line 109, library/scss/partials/_slick.scss */
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+/* line 117, library/scss/partials/_slick.scss */
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+/* line 2, library/scss/partials/_home.scss */
+header,
+footer {
+  display: none;
+}
+
+/* line 9, library/scss/partials/_home.scss */
+.custom-block-hero {
+  padding-top: 15vw;
+  padding-bottom: 15vw;
+  text-align: center;
+  background-position: top center;
+  background-size: cover;
+}
+/* line 19, library/scss/partials/_home.scss */
+.custom-block-hero .custom-block-hero-logo-text-wrapper canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  width: 70%;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 60;
+  height: 120%;
+}
+@media all and (max-width: 700px) {
+  /* line 19, library/scss/partials/_home.scss */
+  .custom-block-hero .custom-block-hero-logo-text-wrapper canvas {
+    display: none !important;
+  }
+}
+/* line 42, library/scss/partials/_home.scss */
+.custom-block-hero .custom-block-hero-logo-text,
+.custom-block-hero .custom-block-hero-subtext {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0;
+  position: relative;
+  z-index: 50;
+}
+@media all and (max-width: 1440px) {
+  /* line 54, library/scss/partials/_home.scss */
+  .custom-block-hero .custom-block-hero-logo-text-wrapper canvas,
+  .custom-block-hero .custom-block-hero-logo-text {
+    width: 60% !important;
+  }
+}
+@media all and (max-width: 1000px) {
+  /* line 54, library/scss/partials/_home.scss */
+  .custom-block-hero .custom-block-hero-logo-text-wrapper canvas,
+  .custom-block-hero .custom-block-hero-logo-text {
+    width: 80% !important;
+    padding-bottom: 0;
+  }
+}
+@media all and (max-width: 700px) {
+  /* line 54, library/scss/partials/_home.scss */
+  .custom-block-hero .custom-block-hero-logo-text-wrapper canvas,
+  .custom-block-hero .custom-block-hero-logo-text {
+    width: 90% !important;
+    padding-bottom: 0;
+  }
+}
+/* line 79, library/scss/partials/_home.scss */
+.custom-block-hero .custom-block-hero-subtext {
+  animation: 2s ease 0s normal forwards 1 fadein;
+  -webkit-animation: 2s ease 0s normal forwards 1 fadein;
+  opacity: 1;
+  width: 40%;
+}
+@media all and (max-width: 1440px) {
+  /* line 79, library/scss/partials/_home.scss */
+  .custom-block-hero .custom-block-hero-subtext {
+    width: 50% !important;
+  }
+}
+@media all and (max-width: 1000px) {
+  /* line 79, library/scss/partials/_home.scss */
+  .custom-block-hero .custom-block-hero-subtext {
+    width: 60% !important;
+  }
+}
+@media all and (max-width: 700px) {
+  /* line 79, library/scss/partials/_home.scss */
+  .custom-block-hero .custom-block-hero-subtext {
+    padding-top: 10px !important;
+    width: 75% !important;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* line 124, library/scss/partials/_home.scss */
+.brand-slider .slick-list {
+  outline: none !important;
+}
+/* line 130, library/scss/partials/_home.scss */
+.brand-slider .slick-slide img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media all and (max-width: 700px) {
+  /* line 130, library/scss/partials/_home.scss */
+  .brand-slider .slick-slide img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* line 146, library/scss/partials/_home.scss */
+.project-masonry {
+  padding-top: 3vw;
+  padding-bottom: 5vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: #000000;
+  /* fluid 5 columns */
+  /* 2 columns */
+}
+@media all and (max-width: 700px) {
+  /* line 146, library/scss/partials/_home.scss */
+  .project-masonry {
+    padding-bottom: 40px;
+  }
+}
+/* line 161, library/scss/partials/_home.scss */
+.project-masonry:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 350px;
+  z-index: 1000;
+  pointer-events: none;
+  background: -moz-linear-gradient(top, transparent 0%, black 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, transparent 0%, black 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, transparent 0%, black 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+  /* IE6-9 */
+}
+@media all and (max-width: 700px) {
+  /* line 161, library/scss/partials/_home.scss */
+  .project-masonry:after {
+    display: none;
+  }
+}
+/* line 185, library/scss/partials/_home.scss */
+.project-masonry .filter-bar {
+  width: 100%;
+  text-align: center;
+}
+/* line 190, library/scss/partials/_home.scss */
+.project-masonry .filter-bar .mason-filter {
+  width: 120px;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: 0.4s opacity;
+}
+@media all and (max-width: 700px) {
+  /* line 190, library/scss/partials/_home.scss */
+  .project-masonry .filter-bar .mason-filter {
+    width: 80px;
+  }
+}
+/* line 204, library/scss/partials/_home.scss */
+.project-masonry .filter-bar .mason-filter:hover {
+  opacity: 1;
+}
+/* line 210, library/scss/partials/_home.scss */
+.project-masonry .filter-bar .mason-filter.selected {
+  opacity: 0.3;
+  cursor: default;
+}
+/* line 221, library/scss/partials/_home.scss */
+.project-masonry .custom-block-project-masonry-logo-text {
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media all and (max-width: 1440px) {
+  /* line 221, library/scss/partials/_home.scss */
+  .project-masonry .custom-block-project-masonry-logo-text {
+    width: 60%;
+  }
+}
+@media all and (max-width: 1000px) {
+  /* line 221, library/scss/partials/_home.scss */
+  .project-masonry .custom-block-project-masonry-logo-text {
+    width: 80%;
+  }
+}
+@media all and (max-width: 700px) {
+  /* line 221, library/scss/partials/_home.scss */
+  .project-masonry .custom-block-project-masonry-logo-text {
+    margin-top: 40px;
+    width: 100%;
+  }
+}
+/* line 249, library/scss/partials/_home.scss */
+.project-masonry .project-masonry-item-bucket {
+  margin-top: 4vw;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media all and (max-width: 700px) {
+  /* line 249, library/scss/partials/_home.scss */
+  .project-masonry .project-masonry-item-bucket {
+    margin-top: 40px;
+  }
+}
+/* line 265, library/scss/partials/_home.scss */
+.project-masonry .grid-sizer {
+  visibility: hidden;
+}
+/* line 272, library/scss/partials/_home.scss */
+.project-masonry .grid-sizer,
+.project-masonry .project-masonry-item {
+  width: 25%;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  cursor: pointer;
+  padding: 5px;
+}
+/* line 281, library/scss/partials/_home.scss */
+.project-masonry .grid-sizer.hidden,
+.project-masonry .project-masonry-item.hidden {
+  display: none !important;
+}
+@media all and (max-width: 1440px) {
+  /* line 272, library/scss/partials/_home.scss */
+  .project-masonry .grid-sizer,
+  .project-masonry .project-masonry-item {
+    width: 33%;
+  }
+}
+@media all and (max-width: 1000px) {
+  /* line 272, library/scss/partials/_home.scss */
+  .project-masonry .grid-sizer,
+  .project-masonry .project-masonry-item {
+    width: 50%;
+  }
+}
+@media all and (max-width: 700px) {
+  /* line 272, library/scss/partials/_home.scss */
+  .project-masonry .grid-sizer,
+  .project-masonry .project-masonry-item {
+    width: 100%;
+  }
+}
+/* line 305, library/scss/partials/_home.scss */
+.project-masonry .grid-sizer .project-masonry-interior,
+.project-masonry .project-masonry-item .project-masonry-interior {
+  position: relative;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     supported by Chrome and Opera */
+}
+/* line 318, library/scss/partials/_home.scss */
+.project-masonry .grid-sizer .project-masonry-title,
+.project-masonry .project-masonry-item .project-masonry-title {
+  position: absolute;
+  top: 50%;
+  left: 00%;
+  width: 100%;
+  transform: translate(0%, -50%);
+  opacity: 0;
+  transition: 0.4s opacity;
+  z-index: 100;
+  pointer-events: none;
+}
+/* line 330, library/scss/partials/_home.scss */
+.project-masonry .grid-sizer .project-masonry-title h3, .project-masonry .grid-sizer .project-masonry-title h6,
+.project-masonry .project-masonry-item .project-masonry-title h3,
+.project-masonry .project-masonry-item .project-masonry-title h6 {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  text-align: center;
+  color: #FFF;
+  text-shadow: 1px 1px 3px black;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* line 343, library/scss/partials/_home.scss */
+.project-masonry .grid-sizer .project-masonry-title h6,
+.project-masonry .project-masonry-item .project-masonry-title h6 {
+  margin-top: 10px;
+}
+/* line 353, library/scss/partials/_home.scss */
+.project-masonry .grid-sizer img,
+.project-masonry .project-masonry-item img {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  display: block;
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  pointer-events: none;
+  border: 1px solid #000;
+}
+/* line 371, library/scss/partials/_home.scss */
+.project-masonry .grid-sizer:hover,
+.project-masonry .project-masonry-item:hover {
+  cursor: pointer;
+}
+/* line 375, library/scss/partials/_home.scss */
+.project-masonry .grid-sizer:hover img,
+.project-masonry .project-masonry-item:hover img {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  opacity: 0.8;
+}
+/* line 383, library/scss/partials/_home.scss */
+.project-masonry .grid-sizer:hover .project-masonry-title,
+.project-masonry .project-masonry-item:hover .project-masonry-title {
+  opacity: 1;
+}
+/* line 394, library/scss/partials/_home.scss */
+.project-masonry .project-masonry-item--width2 {
+  width: 50%;
+}
+
+/* line 402, library/scss/partials/_home.scss */
+.clear {
+  display: block;
+  clear: both;
+  width: 100%;
+  height: 1px;
+}
+
+/* line 411, library/scss/partials/_home.scss */
+.custom-block-biography {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* line 417, library/scss/partials/_home.scss */
+.custom-block-biography .custom-block-bio-image {
+  float: left;
+  margin: 20px;
+}
+/* line 424, library/scss/partials/_home.scss */
+.custom-block-biography .custom-block-biography-content {
+  padding: 20px 20px 20px 0;
+}
+/* line 428, library/scss/partials/_home.scss */
+.custom-block-biography .custom-block-biography-content h1, .custom-block-biography .custom-block-biography-content h2 {
+  margin: 0 !important;
+  display: inline;
+}
+/* line 436, library/scss/partials/_home.scss */
+.custom-block-biography .custom-block-biography-content p {
+  display: inline;
+  padding-top: 10px;
+}
+@media all and (max-width: 1000px) {
+  /* line 448, library/scss/partials/_home.scss */
+  .custom-block-biography .custom-block-bio-image {
+    margin: 0 !important;
+    width: 100%;
+    float: none;
+    display: block;
+  }
+  /* line 457, library/scss/partials/_home.scss */
+  .custom-block-biography .custom-block-biography-content {
+    padding: 20px 20px 20px 20px;
+  }
+}
+
+/* line 467, library/scss/partials/_home.scss */
+.page-footer {
+  background-image: url(/wp-content/themes/mic-b/library/images/bluebg-sml.jpg);
+  background-position: bottom center;
+  background-size: cover;
+  text-align: right;
+  padding: 60px 50px 50px 50px;
+  color: #FFF;
+}
+@media all and (max-width: 600px) {
+  /* line 467, library/scss/partials/_home.scss */
+  .page-footer {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+}
+/* line 483, library/scss/partials/_home.scss */
+.page-footer .footer-img {
+  width: 100px;
+  height: auto;
+}
+/* line 490, library/scss/partials/_home.scss */
+.page-footer span {
+  width: 100%;
+  font-size: 16px;
+}
